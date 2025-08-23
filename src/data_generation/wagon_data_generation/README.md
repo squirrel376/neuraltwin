@@ -19,34 +19,37 @@ This is useful for:
 
 ---
 
-## **1. Mathematical Model**
+## **Mathematical Model for Part-Based Failure Probabilities**
 
-The simulation is built on **probabilistic reliability theory** combined with **stochastic time-series modeling**.
-
-### **1.1 Failure Probability**
-
-Each wagon type has a **base failure rate** `λ_base` (failures per timestep).
-For wagon $i$ of type $T$, we define the **effective failure rate**:
+For each **part** $p$, we define a **time-varying failure rate** $\lambda_p(t)$.
+A common assumption is the **Weibull hazard model**:
 
 $$
-\lambda_i = \lambda_{\text{base}}(T) \cdot \left(1 + \frac{\text{age}_i}{20}\right)
+\lambda_p(t) = \lambda_{p,0} \cdot \left(1 + \frac{t}{T_p}\right)^{\beta_p}
 $$
 
 Where:
 
-* $\lambda_{\text{base}}(T)$ = type-specific constant
-* $\text{age}_i$ = wagon age in years
-* Older wagons are more failure-prone.
+* $\lambda_{p,0}$ = **base failure rate** when the part is new.
+* $t$ = **part age** in days.
+* $T_p$ = **expected lifetime** (mean time to failure).
+* $\beta_p$ = **shape parameter** (>1 → aging accelerates).
 
-The **probability of failure** in one timestep:
+**Instantaneous failure probability per timestep:**
 
 $$
-P_{\text{fail}} = 1 - e^{-\lambda_i} \approx \lambda_i
+P_{\text{fail},p} = 1 - e^{-\lambda_p(t)} \approx \lambda_p(t) \quad \text{for small }\lambda
 $$
 
-(small-$\lambda$ approximation used here).
+**Wagon failure state:**
+A wagon is considered **in failure** if **any part** is failed:
 
----
+$$
+P_{\text{wagon fail}} = 1 - \prod_{p} \left(1 - P_{\text{fail},p}\right)
+$$
+
+This combines all independent part probabilities.
+
 
 ### **1.2 Time Series Generation**
 
@@ -88,35 +91,6 @@ The failure events are logged:
 * Repair time
 * Downtime (minutes)
 * Cause of failure
-
----
-
-### **1.4 Validation of Failure Rates**
-
-After simulation, we check:
-
-$$
-E[F_T] = N_T \cdot N \cdot \lambda_{\text{base}}(T)
-$$
-
-Where:
-
-* $E[F_T]$ = expected failures for type $T$
-* $N_T$ = number of wagons of type $T$
-* $N$ = timesteps per wagon
-
-Then we compare to **observed failures** and report deviations.
-
-Example validation output:
-
-```
-=== FAILURE VALIDATION REPORT ===
-Boxcar              | Wagons:  2 | Expected Failures ≈ 1.0 | Observed: 1
-Tank Car            | Wagons:  3 | Expected Failures ≈ 3.6 | Observed: 4
-Refrigerator Car    | Wagons:  1 | Expected Failures ≈ 0.9 | Observed: 1
-```
-
----
 
 ## **2. Implementation**
 
@@ -239,3 +213,9 @@ This simulator:
 * Produces PDFs & CSVs for each wagon
 
 It's a **self-contained framework** for **data-driven maintenance modeling** in the railroad domain.
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 import os
 import random
-from datetime import datetime, timedelta
+from datetime import datetime
 from faker import Faker
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer
 from reportlab.lib import colors
@@ -9,12 +9,15 @@ from reportlab.lib.styles import getSampleStyleSheet
 
 
 class Wagon:
-    def __init__(self, wagon_types: list, status_options: list, output_dir: str):
+    def __init__(self, wagon_types: list, output_dir: str):
+        """
+        Initializes a new Wagon instance. Wagons are at least 5 years old and have sensor data for maximum 5 years and minimum 1 year.
+
+        """
         fake = Faker()
         self.output_dir = output_dir
 
-        manufacture_date = fake.date_between(start_date="-30y", end_date="-1y")
-        last_maintenance = manufacture_date + timedelta(days=random.randint(365, 5000))
+        manufacture_date = fake.date_between(start_date="-30y", end_date="-5y")
         self.data = {
             "Wagon ID": f"WGN-{fake.unique.random_int(10000, 99999)}",
             "Type": random.choice(wagon_types),
@@ -25,9 +28,7 @@ class Wagon:
             "Operator": fake.company(),
             "Owner": fake.company(),
             "Manufacture Date": manufacture_date.strftime("%Y-%m-%d"),
-            "Last Maintenance": last_maintenance.strftime("%Y-%m-%d"),
-            "Next Maintenance": (last_maintenance + timedelta(days=365)).strftime("%Y-%m-%d"),
-            "Status": random.choice(status_options)
+            "Sensor Installation Date": fake.date_between(start_date="-5y", end_date="-1y").strftime("%Y-%m-%d"),
         }
 
     def get_id(self):
@@ -38,6 +39,9 @@ class Wagon:
 
     def get_age_years(self):
         return datetime.now().year - datetime.strptime(self.data["Manufacture Date"], "%Y-%m-%d").year
+    
+    def get_sensor_installation_date(self):
+        return self.data["Sensor Installation Date"]
 
     def generate_info_pdf(self):
         """Generates static wagon info PDF."""

@@ -40,8 +40,7 @@ if __name__ == "__main__":
         failure_rates=BASE_FAILURE_RATES,
         failure_causes=FAILURE_CAUSES,
         wagon_types=WAGON_TYPES,
-        status_options=STATUS_OPTIONS,
         output_dir=OUTPUT_DIR,
-        num_wagons=100
+        num_wagons=1 
     )
     manager.generate_fleet()
