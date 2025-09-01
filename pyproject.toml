@@ -1,0 +1,16 @@
+[project]
+name = "neuraltwin"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "faker>=37.5.3",
+    "ipykernel>=6.30.1",
+    "matplotlib>=3.7.5",
+    "pandas>=2.1.4",
+    "pyarrow>=21.0.0",
+    "pycaret>=3.3.2",
+    "reportlab>=4.4.3",
+    "ruff>=0.12.11",
+]

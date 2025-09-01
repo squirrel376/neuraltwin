@@ -5,8 +5,14 @@ from fleet_manager import FleetManager
 # -----------------------
 # Global Simulation Config
 # -----------------------
-OUTPUT_DIR = "../../data/wagon_outputs"
+OUTPUT_DIR = "../../data/wagon_data"
+MEASUREMENTS_OUTPUT_DIR = "../../data/wagon_data/measurements"
+METADATA_OUTPUT_DIR = "../../data/wagon_data/metadata"
+FAILURES_OUTPUT_DIR = "../../data/wagon_data/failures"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+os.makedirs(MEASUREMENTS_OUTPUT_DIR, exist_ok=True)
+os.makedirs(METADATA_OUTPUT_DIR, exist_ok=True)
+os.makedirs(FAILURES_OUTPUT_DIR, exist_ok=True)
 
 WAGON_TYPES = ["Boxcar", "Flatcar", "Tank Car", "Hopper", "Refrigerator Car", "Gondola"]
 STATUS_OPTIONS = ["In Service", "Under Maintenance", "Decommissioned", "Reserved"]
@@ -40,7 +46,7 @@ if __name__ == "__main__":
         failure_rates=BASE_FAILURE_RATES,
         failure_causes=FAILURE_CAUSES,
         wagon_types=WAGON_TYPES,
-        output_dir=OUTPUT_DIR,
-        num_wagons=1 
+        sensor_output_dir=OUTPUT_DIR,
+        num_wagons=1,
     )
     manager.generate_fleet()
