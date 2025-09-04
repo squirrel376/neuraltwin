@@ -178,7 +178,7 @@ class WagonSimulator:
         return failures
 
     def get_results(self) -> pd.DataFrame:
-        return pd.DataFrame(self.results)
+        return pd.DataFrame(self.simulated_time_series)
 
     def get_training_data(self) -> pd.DataFrame:
         """Return training data with failure labels for the wagon."""
@@ -186,7 +186,7 @@ class WagonSimulator:
         failures = self.get_failures()
         results["failure"] = False
         results.loc[
-            results["timestamp"].isin(failures["failure_timestamp"]), "failure"
+            results["timestamp"].isin(failures["timestamp"]), "failure"
         ] = True
         return results
 

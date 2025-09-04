@@ -28599,3 +28599,812 @@ ValueError: Input contains NaN.
 2025-08-27 23:33:39,491:INFO:Preloading libraries
 2025-08-27 23:33:39,492:INFO:Set up data.
 2025-08-27 23:33:39,496:INFO:Set up index.
+2025-09-01 22:17:01,513:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-09-01 22:17:01,513:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-09-01 22:17:01,513:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-09-01 22:17:01,513:WARNING:
+'cuml' is a soft dependency and not included in the pycaret installation. Please run: `pip install cuml` to install.
+2025-09-01 22:17:05,874:INFO:PyCaret ClassificationExperiment
+2025-09-01 22:17:05,875:INFO:Logging name: clf-default-name
+2025-09-01 22:17:05,875:INFO:ML Usecase: MLUsecase.CLASSIFICATION
+2025-09-01 22:17:05,876:INFO:version 3.3.2
+2025-09-01 22:17:05,876:INFO:Initializing setup()
+2025-09-01 22:17:05,876:INFO:self.USI: 2597
+2025-09-01 22:17:05,876:INFO:self._variable_keys: {'logging_param', 'gpu_n_jobs_param', 'is_multiclass', 'memory', 'pipeline', 'y_train', 'exp_id', '_ml_usecase', 'exp_name_log', 'data', 'seed', 'gpu_param', 'n_jobs_param', '_available_plots', 'X_train', 'y', 'X', 'idx', 'fold_generator', 'fold_groups_param', 'X_test', 'fold_shuffle_param', 'y_test', 'log_plots_param', 'html_param', 'target_param', 'fix_imbalance', 'USI'}
+2025-09-01 22:17:05,876:INFO:Checking environment
+2025-09-01 22:17:05,876:INFO:python_version: 3.11.9
+2025-09-01 22:17:05,877:INFO:python_build: ('tags/v3.11.9:de54cf5', 'Apr  2 2024 10:12:12')
+2025-09-01 22:17:05,877:INFO:machine: AMD64
+2025-09-01 22:17:05,877:INFO:platform: Windows-10-10.0.19045-SP0
+2025-09-01 22:17:05,882:INFO:Memory: svmem(total=17024348160, available=1051594752, percent=93.8, used=15972753408, free=1051594752)
+2025-09-01 22:17:05,882:INFO:Physical Core: 4
+2025-09-01 22:17:05,883:INFO:Logical Core: 8
+2025-09-01 22:17:05,883:INFO:Checking libraries
+2025-09-01 22:17:05,883:INFO:System:
+2025-09-01 22:17:05,883:INFO:    python: 3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]
+2025-09-01 22:17:05,883:INFO:executable: c:\Apps\repos\neuraltwin\.venv\Scripts\python.exe
+2025-09-01 22:17:05,883:INFO:   machine: Windows-10-10.0.19045-SP0
+2025-09-01 22:17:05,883:INFO:PyCaret required dependencies:
+2025-09-01 22:17:05,897:WARNING:c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\_distutils_hack\__init__.py:30: UserWarning: Setuptools is replacing distutils. Support for replacing an already imported distutils is deprecated. In the future, this condition will fail. Register concerns at https://github.com/pypa/setuptools/issues/new?template=distutils-deprecation.yml
+  warnings.warn(
+
+2025-09-01 22:17:06,118:INFO:                 pip: Not installed
+2025-09-01 22:17:06,118:INFO:          setuptools: 80.9.0
+2025-09-01 22:17:06,118:INFO:             pycaret: 3.3.2
+2025-09-01 22:17:06,118:INFO:             IPython: 9.4.0
+2025-09-01 22:17:06,118:INFO:          ipywidgets: 8.1.7
+2025-09-01 22:17:06,118:INFO:                tqdm: 4.67.1
+2025-09-01 22:17:06,118:INFO:               numpy: 1.26.4
+2025-09-01 22:17:06,118:INFO:              pandas: 2.1.4
+2025-09-01 22:17:06,118:INFO:              jinja2: 3.1.6
+2025-09-01 22:17:06,118:INFO:               scipy: 1.11.4
+2025-09-01 22:17:06,118:INFO:              joblib: 1.3.2
+2025-09-01 22:17:06,118:INFO:             sklearn: 1.4.2
+2025-09-01 22:17:06,118:INFO:                pyod: 2.0.5
+2025-09-01 22:17:06,123:INFO:            imblearn: 0.14.0
+2025-09-01 22:17:06,123:INFO:   category_encoders: 2.7.0
+2025-09-01 22:17:06,123:INFO:            lightgbm: 4.6.0
+2025-09-01 22:17:06,123:INFO:               numba: 0.61.2
+2025-09-01 22:17:06,123:INFO:            requests: 2.32.5
+2025-09-01 22:17:06,123:INFO:          matplotlib: 3.7.5
+2025-09-01 22:17:06,123:INFO:          scikitplot: 0.3.7
+2025-09-01 22:17:06,124:INFO:         yellowbrick: 1.5
+2025-09-01 22:17:06,124:INFO:              plotly: 5.24.1
+2025-09-01 22:17:06,124:INFO:    plotly-resampler: Not installed
+2025-09-01 22:17:06,124:INFO:             kaleido: 1.0.0
+2025-09-01 22:17:06,124:INFO:           schemdraw: 0.15
+2025-09-01 22:17:06,125:INFO:         statsmodels: 0.14.5
+2025-09-01 22:17:06,125:INFO:              sktime: 0.26.0
+2025-09-01 22:17:06,125:INFO:               tbats: 1.1.3
+2025-09-01 22:17:06,126:INFO:            pmdarima: 2.0.4
+2025-09-01 22:17:06,126:INFO:              psutil: 7.0.0
+2025-09-01 22:17:06,126:INFO:          markupsafe: 3.0.2
+2025-09-01 22:17:06,126:INFO:             pickle5: Not installed
+2025-09-01 22:17:06,126:INFO:         cloudpickle: 3.1.1
+2025-09-01 22:17:06,127:INFO:         deprecation: 2.1.0
+2025-09-01 22:17:06,127:INFO:              xxhash: 3.5.0
+2025-09-01 22:17:06,127:INFO:           wurlitzer: Not installed
+2025-09-01 22:17:06,127:INFO:PyCaret optional dependencies:
+2025-09-01 22:17:06,170:INFO:                shap: Not installed
+2025-09-01 22:17:06,170:INFO:           interpret: Not installed
+2025-09-01 22:17:06,170:INFO:                umap: Not installed
+2025-09-01 22:17:06,170:INFO:     ydata_profiling: Not installed
+2025-09-01 22:17:06,170:INFO:  explainerdashboard: Not installed
+2025-09-01 22:17:06,170:INFO:             autoviz: Not installed
+2025-09-01 22:17:06,170:INFO:           fairlearn: Not installed
+2025-09-01 22:17:06,171:INFO:          deepchecks: Not installed
+2025-09-01 22:17:06,171:INFO:             xgboost: Not installed
+2025-09-01 22:17:06,171:INFO:            catboost: Not installed
+2025-09-01 22:17:06,171:INFO:              kmodes: Not installed
+2025-09-01 22:17:06,171:INFO:             mlxtend: Not installed
+2025-09-01 22:17:06,171:INFO:       statsforecast: Not installed
+2025-09-01 22:17:06,171:INFO:        tune_sklearn: Not installed
+2025-09-01 22:17:06,171:INFO:                 ray: Not installed
+2025-09-01 22:17:06,171:INFO:            hyperopt: Not installed
+2025-09-01 22:17:06,172:INFO:              optuna: Not installed
+2025-09-01 22:17:06,172:INFO:               skopt: Not installed
+2025-09-01 22:17:06,172:INFO:              mlflow: Not installed
+2025-09-01 22:17:06,172:INFO:              gradio: Not installed
+2025-09-01 22:17:06,172:INFO:             fastapi: Not installed
+2025-09-01 22:17:06,172:INFO:             uvicorn: Not installed
+2025-09-01 22:17:06,172:INFO:              m2cgen: Not installed
+2025-09-01 22:17:06,172:INFO:           evidently: Not installed
+2025-09-01 22:17:06,173:INFO:               fugue: Not installed
+2025-09-01 22:17:06,173:INFO:           streamlit: Not installed
+2025-09-01 22:17:06,173:INFO:             prophet: Not installed
+2025-09-01 22:17:06,173:INFO:None
+2025-09-01 22:17:06,173:INFO:Set up data.
+2025-09-01 22:17:06,235:INFO:Set up folding strategy.
+2025-09-01 22:17:06,236:INFO:Set up train/test split.
+2025-09-01 22:17:06,367:INFO:Set up index.
+2025-09-01 22:17:06,372:INFO:Assigning column types.
+2025-09-01 22:17:06,407:INFO:Engine successfully changes for model 'lr' to 'sklearn'.
+2025-09-01 22:17:06,487:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2025-09-01 22:17:06,500:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-09-01 22:17:06,558:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:06,559:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:06,630:INFO:Engine for model 'knn' has not been set explicitly, hence returning None.
+2025-09-01 22:17:06,645:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-09-01 22:17:06,736:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:06,737:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:06,739:INFO:Engine successfully changes for model 'knn' to 'sklearn'.
+2025-09-01 22:17:06,887:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-09-01 22:17:06,933:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:06,934:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,010:INFO:Engine for model 'rbfsvm' has not been set explicitly, hence returning None.
+2025-09-01 22:17:07,050:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,051:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,052:INFO:Engine successfully changes for model 'rbfsvm' to 'sklearn'.
+2025-09-01 22:17:07,162:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,163:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,260:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,261:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:07,272:INFO:Preparing preprocessing pipeline...
+2025-09-01 22:17:07,281:INFO:Set up simple imputation.
+2025-09-01 22:17:07,299:INFO:Set up encoding of categorical features.
+2025-09-01 22:17:07,590:INFO:Finished creating preprocessing pipeline.
+2025-09-01 22:17:07,621:INFO:Pipeline: Pipeline(memory=FastMemory(location=C:\Users\Fabian Klos\AppData\Local\Temp\joblib),
+         steps=[('numerical_imputer',
+                 TransformerWrapper(exclude=None,
+                                    include=['speed', 'brake', 'temp',
+                                             'vibration', 'battery'],
+                                    transformer=SimpleImputer(add_indicator=False,
+                                                              copy=True,
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='mean'))),
+                ('categorical_im...
+                                                              fill_value=None,
+                                                              keep_empty_features=False,
+                                                              missing_values=nan,
+                                                              strategy='most_frequent'))),
+                ('rest_encoding',
+                 TransformerWrapper(exclude=None, include=['id'],
+                                    transformer=TargetEncoder(cols=['id'],
+                                                              drop_invariant=False,
+                                                              handle_missing='return_nan',
+                                                              handle_unknown='value',
+                                                              hierarchy=None,
+                                                              min_samples_leaf=20,
+                                                              return_df=True,
+                                                              smoothing=10,
+                                                              verbose=0)))],
+         verbose=False)
+2025-09-01 22:17:07,623:INFO:Creating final display dataframe.
+2025-09-01 22:17:08,371:INFO:Setup _display_container:                     Description             Value
+0                    Session id              3259
+1                        Target           failure
+2                   Target type            Binary
+3           Original data shape       (109973, 7)
+4        Transformed data shape       (109973, 7)
+5   Transformed train set shape        (76981, 7)
+6    Transformed test set shape        (32992, 7)
+7              Numeric features                 5
+8          Categorical features                 1
+9                    Preprocess              True
+10              Imputation type            simple
+11           Numeric imputation              mean
+12       Categorical imputation              mode
+13     Maximum one-hot encoding                25
+14              Encoding method              None
+15               Fold Generator   StratifiedKFold
+16                  Fold Number                10
+17                     CPU Jobs                -1
+18                      Use GPU             False
+19               Log Experiment             False
+20              Experiment Name  clf-default-name
+21                          USI              2597
+2025-09-01 22:17:08,501:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:08,501:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:08,598:WARNING:
+'xgboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install xgboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:08,598:WARNING:
+'catboost' is a soft dependency and not included in the pycaret installation. Please run: `pip install catboost` to install.
+Alternately, you can install this by running `pip install pycaret[models]`
+2025-09-01 22:17:08,598:INFO:setup() successfully completed in 2.73s...............
+2025-09-01 22:17:08,606:INFO:Initializing compare_models()
+2025-09-01 22:17:08,606:INFO:compare_models(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, include=None, exclude=None, fold=None, round=4, cross_validation=True, sort=Recall, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, experiment_custom_tags=None, probability_threshold=None, verbose=True, parallel=None, caller_params={'self': <pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, 'include': None, 'exclude': None, 'fold': None, 'round': 4, 'cross_validation': True, 'sort': 'Recall', 'n_select': 1, 'budget_time': None, 'turbo': True, 'errors': 'ignore', 'fit_kwargs': None, 'groups': None, 'experiment_custom_tags': None, 'probability_threshold': None, 'engine': None, 'verbose': True, 'parallel': None, '__class__': <class 'pycaret.classification.oop.ClassificationExperiment'>})
+2025-09-01 22:17:08,606:INFO:Checking exceptions
+2025-09-01 22:17:08,655:INFO:Preparing display monitor
+2025-09-01 22:17:08,830:INFO:Initializing Logistic Regression
+2025-09-01 22:17:08,831:INFO:Total runtime is 1.6657511393229165e-05 minutes
+2025-09-01 22:17:08,860:INFO:SubProcess create_model() called ==================================
+2025-09-01 22:17:08,865:INFO:Initializing create_model()
+2025-09-01 22:17:08,866:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:08,868:INFO:Checking exceptions
+2025-09-01 22:17:08,869:INFO:Importing libraries
+2025-09-01 22:17:08,870:INFO:Copying training dataset
+2025-09-01 22:17:09,006:INFO:Defining folds
+2025-09-01 22:17:09,007:INFO:Declaring metric variables
+2025-09-01 22:17:09,024:INFO:Importing untrained model
+2025-09-01 22:17:09,050:INFO:Logistic Regression Imported successfully
+2025-09-01 22:17:09,089:INFO:Starting cross validation
+2025-09-01 22:17:09,097:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-09-01 22:17:19,309:WARNING:Exception in thread ExecutorManagerThread:
+2025-09-01 22:17:19,310:WARNING:Traceback (most recent call last):
+2025-09-01 22:17:19,310:WARNING:  File "C:\Users\Fabian Klos\AppData\Local\Programs\Python\Python311\Lib\threading.py", line 1045, in _bootstrap_inner
+2025-09-01 22:17:19,313:WARNING:    self.run()
+2025-09-01 22:17:19,314:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 599, in run
+2025-09-01 22:17:19,314:WARNING:    self.terminate_broken(bpe)
+2025-09-01 22:17:19,315:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 803, in terminate_broken
+2025-09-01 22:17:19,316:WARNING:    self.kill_workers(reason="broken executor")
+2025-09-01 22:17:19,316:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 836, in kill_workers
+2025-09-01 22:17:19,318:WARNING:    kill_process_tree(p)
+2025-09-01 22:17:19,318:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\backend\utils.py", line 19, in kill_process_tree
+2025-09-01 22:17:19,358:WARNING:    _kill_process_tree_with_psutil(process)
+2025-09-01 22:17:19,359:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\backend\utils.py", line 35, in _kill_process_tree_with_psutil
+2025-09-01 22:17:19,359:WARNING:    descendants = psutil.Process(process.pid).children(recursive=True)
+2025-09-01 22:17:19,360:WARNING:                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-09-01 22:17:19,360:WARNING:  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\psutil\__init__.py", line 966, in children
+2025-09-01 22:17:19,392:WARNING:    ppid_map = _ppid_map()
+2025-09-01 22:17:19,393:WARNING:               ^^^^^^^^^^^
+2025-09-01 22:17:19,393:WARNING:OSError: [WinError 1455] Die Auslagerungsdatei ist zu klein, um diesen Vorgang durchzuführen
+2025-09-01 22:17:19,395:WARNING:create_model() for lr raised an exception or returned all 0.0, trying without fit_kwargs:
+2025-09-01 22:17:19,552:WARNING:joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 426, in _process_worker
+    call_item = call_queue.get(block=True, timeout=timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fabian Klos\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\patches\sklearn.py", line 9, in <module>
+    from pycaret.internal.pipeline import pipeline_predict_inverse_only
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pipeline.py", line 25, in <module>
+    from pycaret.utils.generic import get_all_object_vars_and_properties, variable_return
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\utils\generic.py", line 11, in <module>
+    import pandas as pd
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\__init__.py", line 59, in <module>
+    from pandas.core.api import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\groupby\__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\groupby\generic.py", line 67, in <module>
+    from pandas.core.frame import DataFrame
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\frame.py", line 181, in <module>
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1533, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1126, in _create_model_with_cv
+    scores = cross_validate(
+             ^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 430, in cross_validate
+    results = parallel(
+              ^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1699, in _retrieve
+    self._raise_error_fast()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1734, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 736, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 754, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+
+2025-09-01 22:17:19,554:INFO:Initializing create_model()
+2025-09-01 22:17:19,554:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=lr, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:19,554:INFO:Checking exceptions
+2025-09-01 22:17:19,555:INFO:Importing libraries
+2025-09-01 22:17:19,555:INFO:Copying training dataset
+2025-09-01 22:17:19,632:INFO:Defining folds
+2025-09-01 22:17:19,632:INFO:Declaring metric variables
+2025-09-01 22:17:19,653:INFO:Importing untrained model
+2025-09-01 22:17:19,674:INFO:Logistic Regression Imported successfully
+2025-09-01 22:17:19,707:INFO:Starting cross validation
+2025-09-01 22:17:19,714:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2025-09-01 22:17:19,816:ERROR:create_model() for lr raised an exception or returned all 0.0:
+2025-09-01 22:17:19,977:ERROR:joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 426, in _process_worker
+    call_item = call_queue.get(block=True, timeout=timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Fabian Klos\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\patches\sklearn.py", line 9, in <module>
+    from pycaret.internal.pipeline import pipeline_predict_inverse_only
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pipeline.py", line 25, in <module>
+    from pycaret.utils.generic import get_all_object_vars_and_properties, variable_return
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\utils\generic.py", line 11, in <module>
+    import pandas as pd
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\__init__.py", line 59, in <module>
+    from pandas.core.api import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\api.py", line 47, in <module>
+    from pandas.core.groupby import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\groupby\__init__.py", line 1, in <module>
+    from pandas.core.groupby.generic import (
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\groupby\generic.py", line 67, in <module>
+    from pandas.core.frame import DataFrame
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\frame.py", line 181, in <module>
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1032, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1131, in get_data
+MemoryError
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1533, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1126, in _create_model_with_cv
+    scores = cross_validate(
+             ^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 430, in cross_validate
+    results = parallel(
+              ^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1952, in __call__
+    return output if self.return_generator else list(output)
+                                                ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1595, in _get_outputs
+    yield from self._retrieve()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1699, in _retrieve
+    self._raise_error_fast()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1734, in _raise_error_fast
+    error_job.get_result(self.timeout)
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 736, in get_result
+    return self._return_or_raise()
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 754, in _return_or_raise
+    raise self._result
+joblib.externals.loky.process_executor.BrokenProcessPool: A task has failed to un-serialize. Please ensure that the arguments of the function are all picklable.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 815, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1533, in _create_model
+    model, model_fit_time, model_results, _ = self._create_model_with_cv(
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1126, in _create_model_with_cv
+    scores = cross_validate(
+             ^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\_param_validation.py", line 213, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\model_selection\_validation.py", line 430, in cross_validate
+    results = parallel(
+              ^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\sklearn\utils\parallel.py", line 67, in __call__
+    return super().__call__(iterable_with_config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1950, in __call__
+    next(output)
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1588, in _get_outputs
+    self._start(iterator, pre_dispatch)
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1571, in _start
+    if self.dispatch_one_batch(iterator):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1462, in dispatch_one_batch
+    self._dispatch(tasks)
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\parallel.py", line 1384, in _dispatch
+    job = self._backend.apply_async(batch, callback=batch_tracker)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\_parallel_backends.py", line 600, in apply_async
+    future = self._workers.submit(func)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\reusable_executor.py", line 225, in submit
+    return super().submit(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 1248, in submit
+    self._ensure_executor_running()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 1220, in _ensure_executor_running
+    self._adjust_process_count()
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\process_executor.py", line 1209, in _adjust_process_count
+    p.start()
+  File "C:\Users\Fabian Klos\AppData\Local\Programs\Python\Python311\Lib\multiprocessing\process.py", line 121, in start
+    self._popen = self._Popen(self)
+                  ^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\backend\process.py", line 45, in _Popen
+    return Popen(process_obj)
+           ^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\joblib\externals\loky\backend\popen_loky_win32.py", line 86, in __init__
+    hp, ht, pid, _ = _winapi.CreateProcess(
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\debugpy\_vendored\pydevd\_pydev_bundle\pydev_monkey.py", line 911, in new_CreateProcess
+    return getattr(_subprocess, original_name)(app_name, cmd_line, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [WinError 8] Zur Verarbeitung dieses Befehls sind nicht genügend Speicherressourcen verfügbar
+
+2025-09-01 22:17:19,977:INFO:Initializing K Neighbors Classifier
+2025-09-01 22:17:19,977:INFO:Total runtime is 0.1857809106508891 minutes
+2025-09-01 22:17:19,994:INFO:SubProcess create_model() called ==================================
+2025-09-01 22:17:19,995:INFO:Initializing create_model()
+2025-09-01 22:17:19,995:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:19,995:INFO:Checking exceptions
+2025-09-01 22:17:19,996:INFO:Importing libraries
+2025-09-01 22:17:19,996:INFO:Copying training dataset
+2025-09-01 22:17:20,007:WARNING:create_model() for knn raised an exception or returned all 0.0, trying without fit_kwargs:
+2025-09-01 22:17:20,044:WARNING:Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1147, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1339, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 994, in _getitem_tuple_same_dim
+    retval = getattr(retval, self.name)._getitem_axis(key, axis=i)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1382, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1322, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1520, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6110, in _get_indexer_strict
+    indexer = self.get_indexer_for(keyarr)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6097, in get_indexer_for
+    return self.get_indexer(target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3943, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3970, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 336, in pandas._libs.index.IndexEngine.get_indexer
+  File "pandas\_libs\hashtable_class_helper.pxi", line 2730, in pandas._libs.hashtable.Int64HashTable.lookup
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 601. KiB for an array with shape (76981,) and data type int64
+
+2025-09-01 22:17:20,045:INFO:Initializing create_model()
+2025-09-01 22:17:20,045:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=knn, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:20,045:INFO:Checking exceptions
+2025-09-01 22:17:20,046:INFO:Importing libraries
+2025-09-01 22:17:20,046:INFO:Copying training dataset
+2025-09-01 22:17:20,050:ERROR:create_model() for knn raised an exception or returned all 0.0:
+2025-09-01 22:17:20,138:ERROR:Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1147, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1339, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 994, in _getitem_tuple_same_dim
+    retval = getattr(retval, self.name)._getitem_axis(key, axis=i)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1382, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1322, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1520, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6110, in _get_indexer_strict
+    indexer = self.get_indexer_for(keyarr)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6097, in get_indexer_for
+    return self.get_indexer(target)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3943, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3970, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 336, in pandas._libs.index.IndexEngine.get_indexer
+  File "pandas\_libs\hashtable_class_helper.pxi", line 2730, in pandas._libs.hashtable.Int64HashTable.lookup
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 601. KiB for an array with shape (76981,) and data type int64
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 815, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\pycaret_experiment.py", line 557, in dataset
+    return self.data[[c for c in self.data.columns if c not in self._fxs["Ignore"]]]
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\frame.py", line 3908, in __getitem__
+    data = self._take_with_is_copy(indexer, axis=1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\generic.py", line 4088, in _take_with_is_copy
+    result = self.take(indices=indices, axis=axis)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\generic.py", line 4068, in take
+    new_data = self._mgr.take(
+               ^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 877, in take
+    return self.reindex_indexer(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 663, in reindex_indexer
+    new_blocks = self._slice_take_blocks_ax0(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 826, in _slice_take_blocks_ax0
+    nb = blk.take_nd(taker, axis=0, new_mgr_locs=mgr_locs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\blocks.py", line 1061, in take_nd
+    new_values = algos.take_nd(
+                 ^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\array_algos\take.py", line 118, in take_nd
+    return _take_nd_ndarray(arr, indexer, axis, fill_value, allow_fill)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\array_algos\take.py", line 156, in _take_nd_ndarray
+    out = np.empty(out_shape, dtype=dtype, order="F")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 430. KiB for an array with shape (109973, 1) and data type float32
+
+2025-09-01 22:17:20,139:INFO:Initializing Naive Bayes
+2025-09-01 22:17:20,139:INFO:Total runtime is 0.18847530682881675 minutes
+2025-09-01 22:17:20,156:INFO:SubProcess create_model() called ==================================
+2025-09-01 22:17:20,157:INFO:Initializing create_model()
+2025-09-01 22:17:20,157:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:20,158:INFO:Checking exceptions
+2025-09-01 22:17:20,158:INFO:Importing libraries
+2025-09-01 22:17:20,158:INFO:Copying training dataset
+2025-09-01 22:17:20,170:WARNING:create_model() for nb raised an exception or returned all 0.0, trying without fit_kwargs:
+2025-09-01 22:17:20,177:WARNING:Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1147, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1339, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 994, in _getitem_tuple_same_dim
+    retval = getattr(retval, self.name)._getitem_axis(key, axis=i)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1382, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1322, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1520, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6111, in _get_indexer_strict
+    keyarr = self.reindex(keyarr)[0]
+             ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 4427, in reindex
+    indexer = self.get_indexer(
+              ^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3943, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3970, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 336, in pandas._libs.index.IndexEngine.get_indexer
+  File "pandas\_libs\hashtable_class_helper.pxi", line 2730, in pandas._libs.hashtable.Int64HashTable.lookup
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 601. KiB for an array with shape (76981,) and data type int64
+
+2025-09-01 22:17:20,178:INFO:Initializing create_model()
+2025-09-01 22:17:20,178:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=nb, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:20,179:INFO:Checking exceptions
+2025-09-01 22:17:20,179:INFO:Importing libraries
+2025-09-01 22:17:20,179:INFO:Copying training dataset
+2025-09-01 22:17:20,186:ERROR:create_model() for nb raised an exception or returned all 0.0:
+2025-09-01 22:17:20,216:ERROR:Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 794, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1147, in __getitem__
+    return self._getitem_tuple(key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1339, in _getitem_tuple
+    return self._getitem_tuple_same_dim(tup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 994, in _getitem_tuple_same_dim
+    retval = getattr(retval, self.name)._getitem_axis(key, axis=i)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1382, in _getitem_axis
+    return self._getitem_iterable(key, axis=axis)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1322, in _getitem_iterable
+    keyarr, indexer = self._get_listlike_indexer(key, axis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexing.py", line 1520, in _get_listlike_indexer
+    keyarr, indexer = ax._get_indexer_strict(key, axis_name)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 6111, in _get_indexer_strict
+    keyarr = self.reindex(keyarr)[0]
+             ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 4427, in reindex
+    indexer = self.get_indexer(
+              ^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3943, in get_indexer
+    return self._get_indexer(target, method, limit, tolerance)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\indexes\base.py", line 3970, in _get_indexer
+    indexer = self._engine.get_indexer(tgt_values)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "index.pyx", line 336, in pandas._libs.index.IndexEngine.get_indexer
+  File "pandas\_libs\hashtable_class_helper.pxi", line 2730, in pandas._libs.hashtable.Int64HashTable.lookup
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 601. KiB for an array with shape (76981,) and data type int64
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 815, in compare_models
+    model, model_fit_time = self._create_model(**create_model_args)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 1421, in _create_model
+    data_X, data_y = self._create_model_get_train_X_y(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 103, in _create_model_get_train_X_y
+    if self.X_train is None:
+       ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\non_ts_supervised_experiment.py", line 25, in X_train
+    return self.train.drop(self.target_param, axis=1)
+           ^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\supervised_experiment.py", line 5806, in train
+    return self.dataset.loc[self.idx[0], :]
+           ^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pycaret\internal\pycaret_experiment\pycaret_experiment.py", line 557, in dataset
+    return self.data[[c for c in self.data.columns if c not in self._fxs["Ignore"]]]
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\frame.py", line 3908, in __getitem__
+    data = self._take_with_is_copy(indexer, axis=1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\generic.py", line 4088, in _take_with_is_copy
+    result = self.take(indices=indices, axis=axis)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\generic.py", line 4068, in take
+    new_data = self._mgr.take(
+               ^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 877, in take
+    return self.reindex_indexer(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 663, in reindex_indexer
+    new_blocks = self._slice_take_blocks_ax0(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\managers.py", line 826, in _slice_take_blocks_ax0
+    nb = blk.take_nd(taker, axis=0, new_mgr_locs=mgr_locs)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\internals\blocks.py", line 1061, in take_nd
+    new_values = algos.take_nd(
+                 ^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\array_algos\take.py", line 118, in take_nd
+    return _take_nd_ndarray(arr, indexer, axis, fill_value, allow_fill)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Apps\repos\neuraltwin\.venv\Lib\site-packages\pandas\core\array_algos\take.py", line 156, in _take_nd_ndarray
+    out = np.empty(out_shape, dtype=dtype, order="F")
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+numpy.core._exceptions._ArrayMemoryError: Unable to allocate 430. KiB for an array with shape (109973, 1) and data type float32
+
+2025-09-01 22:17:20,217:INFO:Initializing Decision Tree Classifier
+2025-09-01 22:17:20,218:INFO:Total runtime is 0.18979194561640422 minutes
+2025-09-01 22:17:20,230:INFO:SubProcess create_model() called ==================================
+2025-09-01 22:17:20,231:INFO:Initializing create_model()
+2025-09-01 22:17:20,231:INFO:create_model(self=<pycaret.classification.oop.ClassificationExperiment object at 0x000001F17F921410>, estimator=dt, fold=StratifiedKFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, probability_threshold=None, experiment_custom_tags=None, verbose=False, system=False, add_to_model_list=True, metrics=None, display=<pycaret.internal.display.display.CommonDisplay object at 0x000001F101E57290>, model_only=True, return_train_score=False, error_score=0.0, kwargs={})
+2025-09-01 22:17:20,231:INFO:Checking exceptions
+2025-09-01 22:17:20,231:INFO:Importing libraries
+2025-09-01 22:17:20,232:INFO:Copying training dataset
+2025-09-01 22:17:20,288:INFO:Defining folds
+2025-09-01 22:17:20,288:INFO:Declaring metric variables
+2025-09-01 22:17:20,299:INFO:Importing untrained model
+2025-09-01 22:17:20,312:INFO:Decision Tree Classifier Imported successfully
+2025-09-01 22:17:20,336:INFO:Starting cross validation
+2025-09-01 22:17:20,340:INFO:Cross validating with StratifiedKFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1

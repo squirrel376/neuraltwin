@@ -131,6 +131,14 @@ class FleetManager:
         self.generate_wagons()
         self.run_simulation()
 
+    def get_historic_fleet_training_data(self) -> pd.DataFrame:
+        # Combine all historic wagon results into a single DataFrame, including wagon id and failure column
+        all_training_data = self.get_fleet_training_data()
+        historic_training_data = all_training_data[
+            all_training_data['timestamp'] < pd.Timestamp.now() - pd.Timedelta(days=self.n_future_days)
+        ]
+        return historic_training_data
+
     def get_fleet_training_data(self) -> pd.DataFrame:
         # Combine all wagon results into a single DataFrame, including wagon id and failure column
 
