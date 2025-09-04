@@ -20,22 +20,22 @@ class Wagon:
 
         manufacture_date = fake.date_between(start_date="-30y", end_date="-5y")
         self.data = {
-            "Wagon ID": f"WGN-{fake.unique.random_int(10000, 99999)}",
+            "id": f"WGN-{fake.unique.random_int(10000, 99999)}",
             "Type": random.choice(wagon_types),
-            "Capacity (tons)": random.randint(20, 120),
-            "Length (m)": round(random.uniform(8.0, 25.0), 2),
-            "Width (m)": round(random.uniform(2.5, 3.5), 2),
-            "Height (m)": round(random.uniform(2.0, 4.5), 2),
+            "Capacity_tons": random.randint(20, 120),
+            "Length_m": round(random.uniform(8.0, 25.0), 2),
+            "Width_m": round(random.uniform(2.5, 3.5), 2),
+            "Height_m": round(random.uniform(2.0, 4.5), 2),
             "Operator": fake.company(),
             "Owner": fake.company(),
-            "Manufacture Date": manufacture_date.strftime("%Y-%m-%d"),
-            "Sensor Installation Date": fake.date_between(
+            "Manufacture_Date": manufacture_date.strftime("%Y-%m-%d"),
+            "Sensor_Installation_Date": fake.date_between(
                 start_date="-5y", end_date="-1y"
             ).strftime("%Y-%m-%d"),
         }
 
     def get_id(self):
-        return self.data["Wagon ID"]
+        return self.data["id"]
 
     def get_type(self):
         return self.data["Type"]

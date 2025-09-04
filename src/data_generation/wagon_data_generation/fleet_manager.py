@@ -46,7 +46,7 @@ class FleetManager:
             sim.simulate()
             self.simulators.append(sim)
 
-    def save_historical_simulation_results(self, file_type: Literal["csv", "json", "parquet"]):
+    def save_historical_simulation_results(self, file_type: Literal["CSV", "NDJSON", "PARQUET"]):
         for sim in self.simulators:
             historic_data = sim.simulated_time_series[
                 sim.simulated_time_series['timestamp'] <= pd.Timestamp.now() - pd.Timedelta(days=self.n_future_days)
@@ -69,7 +69,7 @@ class FleetManager:
         ]
         return future_failures
 
-    def save_historical_failure_results(self, file_type: Literal["csv", "json", "parquet"], one_file: bool):
+    def save_historical_failure_results(self, file_type: Literal["CSV", "NDJSON", "PARQUET"], one_file: bool):
         """Save historical failure results. 'Historic' refers to data up to n_future_days in the past."""
         if one_file:
             combined_failures = self.get_all_failures()
@@ -96,7 +96,7 @@ class FleetManager:
                 file_name=f"{sim.wagon.get_id()}_failures.{file_type}",
             )
 
-    def save_future_failures_results(self, file_type: Literal["csv", "json", "parquet"], path: str):
+    def save_future_failures_results(self, file_type: Literal["CSV", "NDJSON", "PARQUET"], path: str):
         """Save all future failures into a single file. 'Future' refers to all data after n_future_days in the past."""
         combined_failures = pd.concat([sim.get_failures() for sim in self.simulators], ignore_index=True)
         future_failures = combined_failures[
@@ -109,7 +109,7 @@ class FleetManager:
             file_name=f"combined_future_failures.{file_type}",
         )
 
-    def save_metadata_single_files(self, file_type: Literal["csv", "json", "parquet"]):
+    def save_metadata_single_files(self, file_type: Literal["CSV", "NDJSON", "PARQUET"]):
         for wagon in self.wagons:
             save_data(
                 wagon.data,
@@ -118,7 +118,7 @@ class FleetManager:
                 file_name=f"{wagon.get_id()}_metadata.{file_type}",
             )
 
-    def save_metadata_one_file(self, file_type: Literal["csv", "json", "parquet"]):
+    def save_metadata_one_file(self, file_type: Literal["CSV", "NDJSON", "PARQUET"]):
         combined_metadata = pd.DataFrame([wagon.data for wagon in self.wagons])
         save_data(
             combined_metadata,
