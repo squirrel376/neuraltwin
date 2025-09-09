@@ -6,6 +6,7 @@ import pandas as pd
 from src.data_generation.utils import save_data
 from .wagon import Wagon
 from .wagon_simulator import WagonSimulator
+from faker import Faker
 
 
 class FleetManager:
@@ -18,7 +19,8 @@ class FleetManager:
         metadata_output_dir: str,
         failure_output_dir: str,
         num_wagons: int,
-        n_future_days: int = 30
+        n_future_days: int = 30,
+        n_operators: int = 15
     ):
         self.num_wagons = num_wagons
         self.sensor_output_dir = sensor_output_dir
@@ -28,7 +30,10 @@ class FleetManager:
         self.wagon_types = wagon_types
         self.failure_causes = failure_causes
         self.n_future_days = n_future_days
+        self.n_operators = n_operators
 
+        fake = Faker()
+        self.wagon_operators = [fake.company() for _ in range(n_operators)] 
         self.wagons: list[Wagon] = []
         self.simulators: list[WagonSimulator] = []
         self.failure_stats = defaultdict(list)
