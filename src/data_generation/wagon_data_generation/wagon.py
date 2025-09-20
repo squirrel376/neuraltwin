@@ -43,11 +43,11 @@ class Wagon:
     def get_age_years(self):
         return (
             datetime.now().year
-            - datetime.strptime(self.data["Manufacture Date"], "%Y-%m-%d").year
+            - datetime.strptime(self.data["Manufacture_Date"], "%Y-%m-%d").year
         )
 
     def get_sensor_installation_date(self):
-        return self.data["Sensor Installation Date"]
+        return self.data["Sensor_Installation_Date"]
 
     def write_wagon_metadata(
         self, path: str, file_type: Literal["csv", "json", "parquet"], file_name: str
