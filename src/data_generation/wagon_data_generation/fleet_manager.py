@@ -1,4 +1,5 @@
 from collections import defaultdict
+import os
 from typing import Literal
 
 import pandas as pd
@@ -6,43 +7,44 @@ import pandas as pd
 from src.data_generation.utils import save_data
 from .wagon import Wagon
 from .wagon_simulator import WagonSimulator
+from faker import Faker
 
 
 class FleetManager:
     def __init__(
         self,
-        failure_rates: dict,
-        failure_causes: dict,
         wagon_types: list,
-        sensor_output_dir: str,
-        metadata_output_dir: str,
-        failure_output_dir: str,
+        output_dir: str,
         num_wagons: int,
-        n_future_days: int = 30
+        n_operators: int,
+        n_future_days: int = 30,
     ):
         self.num_wagons = num_wagons
-        self.sensor_output_dir = sensor_output_dir
-        self.metadata_output_dir = metadata_output_dir
-        self.failure_output_dir = failure_output_dir
-        self.failure_rates = failure_rates
+        self.output_dir = output_dir
+        self.sensor_output_dir = output_dir + "/measurements"
+        self.metadata_output_dir = output_dir + "/metadata"
+        self.failure_output_dir = output_dir + "/failures"
         self.wagon_types = wagon_types
-        self.failure_causes = failure_causes
         self.n_future_days = n_future_days
+        self.n_operators = n_operators
 
+        os.makedirs(self.output_dir, exist_ok=True)
+        os.makedirs(self.sensor_output_dir, exist_ok=True)
+        os.makedirs(self.metadata_output_dir, exist_ok=True)
+        os.makedirs(self.failure_output_dir, exist_ok=True)
+
+        fake = Faker()
+        self.wagon_operators = [fake.company() for _ in range(n_operators)] 
         self.wagons: list[Wagon] = []
         self.simulators: list[WagonSimulator] = []
         self.failure_stats = defaultdict(list)
 
     def generate_wagons(self):
-        self.wagons = [Wagon(self.wagon_types) for _ in range(self.num_wagons)]
+        self.wagons = [Wagon(self.wagon_types, wagon_operators=self.wagon_operators) for _ in range(self.num_wagons)]
 
     def run_simulation(self):
         for wagon in self.wagons:
-            sim = WagonSimulator(
-                wagon,
-                self.failure_rates,
-                self.failure_causes,
-            )
+            sim = WagonSimulator(wagon)
             sim.simulate()
             self.simulators.append(sim)
 
@@ -96,7 +98,7 @@ class FleetManager:
                 file_name=f"{sim.wagon.get_id()}_failures.{file_type}",
             )
 
-    def save_future_failures_results(self, file_type: Literal["CSV", "NDJSON", "PARQUET"], path: str):
+    def save_future_failures_results(self, file_type: Literal["CSV", "NDJSON", "PARQUET"]):
         """Save all future failures into a single file. 'Future' refers to all data after n_future_days in the past."""
         combined_failures = pd.concat([sim.get_failures() for sim in self.simulators], ignore_index=True)
         future_failures = combined_failures[
@@ -104,7 +106,7 @@ class FleetManager:
         ]
         save_data(
             future_failures,
-            path,
+            self.output_dir,
             file_type=file_type,
             file_name=f"combined_future_failures.{file_type}",
         )

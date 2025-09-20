@@ -11,7 +11,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 
 
 class Wagon:
-    def __init__(self, wagon_types: list):
+    def __init__(self, wagon_types: list, wagon_operators: list):
         """
         Initializes a new Wagon instance. Wagons are at least 5 years old and have sensor data for maximum 5 years and minimum 1 year.
 
@@ -26,7 +26,7 @@ class Wagon:
             "Length_m": round(random.uniform(8.0, 25.0), 2),
             "Width_m": round(random.uniform(2.5, 3.5), 2),
             "Height_m": round(random.uniform(2.0, 4.5), 2),
-            "Operator": fake.company(),
+            "Operator": wagon_operators[random.randint(0, len(wagon_operators)-1)],
             "Owner": fake.company(),
             "Manufacture_Date": manufacture_date.strftime("%Y-%m-%d"),
             "Sensor_Installation_Date": fake.date_between(
@@ -43,11 +43,11 @@ class Wagon:
     def get_age_years(self):
         return (
             datetime.now().year
-            - datetime.strptime(self.data["Manufacture Date"], "%Y-%m-%d").year
+            - datetime.strptime(self.data["Manufacture_Date"], "%Y-%m-%d").year
         )
 
     def get_sensor_installation_date(self):
-        return self.data["Sensor Installation Date"]
+        return self.data["Sensor_Installation_Date"]
 
     def write_wagon_metadata(
         self, path: str, file_type: Literal["csv", "json", "parquet"], file_name: str

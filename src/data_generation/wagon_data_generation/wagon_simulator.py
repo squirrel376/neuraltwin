@@ -17,10 +17,8 @@ class WagonSimulator:
     Simulate sensor data and failures for a wagon over time with one measurement per day.
     """
 
-    def __init__(self, wagon: Wagon, failure_rates: dict, failure_causes: dict):
+    def __init__(self, wagon: Wagon):
         self.wagon = wagon
-        self.failure_rates = failure_rates
-        self.failure_causes = failure_causes
         self.timestamps = []
         self.failure_log = []
 
@@ -33,10 +31,10 @@ class WagonSimulator:
 
         # Parts with Weibull-like failure dynamics
         parts = {
-            "brakes": {"lambda0": 0.0003, "lifetime": 800, "beta": 2.0},
-            "axle": {"lambda0": 0.0002, "lifetime": 1200, "beta": 1.8},
-            "battery": {"lambda0": 0.0001, "lifetime": 600, "beta": 2.2},
-            "cooling": {"lambda0": 0.0004, "lifetime": 500, "beta": 2.5},
+            "brakes": {"lambda0": 0.002, "lifetime": 200, "beta": 2.0},
+            "axle": {"lambda0": 0.0006, "lifetime": 1200, "beta": 1.8},
+            "battery": {"lambda0": 0.0009, "lifetime": 300, "beta": 2.2},
+            "cooling": {"lambda0": 0.0004, "lifetime": 400, "beta": 2.5},
         }
 
         # Assign initial states per part
