@@ -1,5 +1,10 @@
 ## NeuralTwin: The Industrial Digital Twin Agent
 
+
+<p align="center">
+  <img src="./docs/logo_white_clean_16_9.png" alt="neuraltwin Logo" width="300"/>
+</p>
+
 ### **Summary (TL;DR)**
 
 Industrial companies are drowning in sensor data but starving for insights. The high cost of unplanned downtime remains a critical problem, largely because raw data from IIoT sensors is often messy, siloed, and difficult to analyze. **neuraltwin** is an end-to-end Python agent that solves this. It ingests raw industrial data (`measurements`, `failures`, `metadata`) in any common format, automatically processes it using BigQuery, predicts future sensor data using BigQuery ML, trains a predictive failure model, and generates concise, tailored reports based on BigQuery's generative AI features. These reports summarize the previous month's performance and, most importantly, provide a clear forecast of which assets are likely to fail in the next 30 days, transforming reactive maintenance into a proactive, data-driven strategy.
