@@ -23,7 +23,7 @@ We wanted to build an agent that automates this entire workflow, using the serve
 Neuraltwin operates in a simple, automated four-step pipeline:
 
 1.  **Ingest & Synthesize:** The agent takes raw data files for measurements, failures, and asset metadata. It is format-agnostic, capable of handling CSV, Parquet, JSON, and more. It intelligently infers schemas and loads them into structured, queryable tables within BigQuery.
-2.  **Analyze & Train with BQML:** Once the data is centralized in BigQuery, the agent uses trains a classification model (e.g., Boosted Tree Classifier). This "digital twin" model learns the complex patterns that precede an asset failure.
+2.  **Analyze & Train:** Once the data is centralized in BigQuery, the agent uses trains a classification model (e.g., Boosted Tree Classifier). This "digital twin" model learns the complex patterns that precede an asset failure.
 3.  **Forecast & Explain:** neuraltwin uses bigquery's ai.forecast to predict future sensor values. Based on the trained model, neuraltwin then scores all active assets to predict the probability of failure over the next 30 days.
 4.  **Report & Deliver:** The agent generates polished, concise reports tailored to different stakeholders.
 
