@@ -1,89 +1,59 @@
-# neuraltwin
+## NeuralTwin: The Industrial Digital Twin Agent
 
-```
-py -3.12 -m venv .venv
-.venv/Scripts/activate
-pip install faker ipykernel matplotlib pandas reportlab pycaret
-```
 
-## Wagon simulator parameters: `parts`, `baselines`, and `degradation rates`
+<p align="center">
+  <img src="docs/logo_center_tight_crop.png" alt="NeuralTwin Logo" width="350" height="350" style="object-fit: cover; object-position: center; border-radius: 12px;"/>
+</p>
 
-The data-generation simulator (`src/data_generation/wagon_data_generation/wagon_simulator.py`) models component wear and sensor drift using three main concepts:
+### **Summary (TL;DR)**
 
-- `parts`: a dict of components modeled with simple Weibull-like failure dynamics. Each part entry is a mapping with keys:
-  - `lambda0`: base hazard rate (per day) used as the starting failure intensity
-  - `lifetime`: a scaling constant (days) that controls how quickly the hazard increases with age
-  - `beta`: a shape factor that controls how the hazard grows with time (Weibull-like exponent)
-  - runtime fields added by the simulator: `failed` (bool), `last_replacement` (datetime), and `failures` (list)
+Industrial companies are drowning in sensor data but starving for insights. The high cost of unplanned downtime remains a critical problem, largely because raw data from IIoT sensors is often messy, siloed, and difficult to analyze. **neuraltwin** is an end-to-end Python agent that solves this. It ingests raw industrial data (`measurements`, `failures`, `metadata`) in any common format, automatically processes it using BigQuery, predicts future sensor data using BigQuery ML, trains a predictive failure model, and generates concise, tailored reports based on BigQuery's generative AI features. These reports summarize the previous month's performance and, most importantly, provide a clear forecast of which assets are likely to fail in the next 30 days, transforming reactive maintenance into a proactive, data-driven strategy.
 
-  Example snippet from the simulator:
+### **The Inspiration: From Data Chaos to Predictive Clarity**
 
-  ```python
-  parts = {
-      "brakes": {"lambda0": 0.0003, "lifetime": 800, "beta": 2.0},
-      "axle": {"lambda0": 0.0002, "lifetime": 1200, "beta": 1.8},
-      "battery": {"lambda0": 0.0001, "lifetime": 600, "beta": 2.2},
-      "cooling": {"lambda0": 0.0004, "lifetime": 500, "beta": 2.5},
-  }
-  ```
+The core idea for `neuraltwin` came from a simple observation: most industrial data science projects fail at the "last mile." While collecting sensor data is easier than ever, turning it into actionable intelligence that an operator or plant manager can actually use is incredibly difficult. Teams spend months wrestling with:
+*   **Data Heterogeneity:** Measurements in CSV, failure logs in Parquet, asset metadata in JSON—all with different schemas.
+*   **Complex Modeling:** Building, training, and deploying time-series or classification models requires specialized expertise.
+*   **Actionability Gap:** A Jupyter notebook with a 95% accuracy score doesn't prevent a machine from failing. The insights need to be delivered to the right person, in the right format, at the right time.
 
-  How failures are sampled (simplified):
-  - For each part the code computes an instantaneous hazard `lam = lambda0 * (1 + age / lifetime) ** beta` where `age` is days since `last_replacement`.
-  - The failure probability for that day is `p_fail = min(1.0, lam)` and a uniform random sample (`np.random.rand()`) determines if a failure occurs.
+We wanted to build an agent that automates this entire workflow, using the serverless power of Google Cloud and BigQuery to create a scalable, no-fuss solution.
 
-- `baselines`: a set of nominal, healthy sensor values used as a starting point for simulated readings. Current baseline keys and units:
-  - `speed`: km/h
-  - `brake`: bar
-  - `temp`: °C
-  - `vibration`: mm/s
-  - `battery`: percent (%)
+### **What It Does: The Four-Step Process**
 
-  Example:
+Neuraltwin operates in a simple, automated four-step pipeline:
 
-  ```python
-  BASELINES = {
-      "speed": 60,
-      "brake": 5,
-      "temp": 40,
-      "vibration": 2,
-      "battery": 100,
-  }
-  ```
+1.  **Ingest & Synthesize:** The agent takes raw data files for measurements, failures, and asset metadata. It is format-agnostic, capable of handling CSV, Parquet, JSON, and more. It intelligently infers schemas and loads them into structured, queryable tables within BigQuery.
+2.  **Analyze & Train with BQML:** Once the data is centralized in BigQuery, the agent uses trains a classification model (e.g., Boosted Tree Classifier). This "digital twin" model learns the complex patterns that precede an asset failure.
+3.  **Forecast & Explain:** neuraltwin uses bigquery's ai.forecast to predict future sensor values. Based on the trained model, neuraltwin then scores all active assets to predict the probability of failure over the next 30 days.
+4.  **Report & Deliver:** The agent generates polished, concise reports tailored to different stakeholders.
 
-- `degradation rates`: small per-day additive changes applied to baselines to simulate drift and wear. They are applied as `value = baseline + rate * age + noise` for non-failure days.
+### **How We Built It: Technical Architecture**
 
-  Example:
+We leveraged the power and scalability of the Google Cloud ecosystem, with BigQuery as the central nervous system.
 
-  ```python
-  DEGRADATION_RATES = {
-      "speed": -0.02,      # km/h per day (slower over time)
-      "brake": +0.005,     # bar per day (braking worsens)
-      "temp": +0.02,       # °C per day (heating)
-      "vibration": +0.005, # mm/s per day (more vibrations)
-      "battery": -0.05,    # percent per day (capacity loss)
-  }
-  ```
+![GCS to BigQuery Architecture Diagram](docs/gcs_to_bigquery_architectureimages.007.jpeg)
 
-  Notes:
-  - `age` used in the formula is typically days since the relevant part's `last_replacement`.
-  - Small floating-point rates accumulate over many days/months, producing realistic drift.
-  - During a failure the simulator forces different, more extreme sensor values (e.g., `speed=0`, large temperature and vibration spikes) until the part's `repair_time`.
+*   **Data Lake & Warehouse (Google Cloud Storage & BigQuery):** Raw data files are landed in a GCS bucket. Our Python script uses the BigQuery client library to load this data, automatically detecting schemas and creating tables. This provides a robust, serverless data warehouse.
+*   **Model:** The model was built using the low-code library pycaret. In the future, we would like to transition to BigQuery's  `CREATE MODEL` statement in order to have the full pipeline cloud-native and leverage BigQuery's full big data capabilities.
+*   **Orchestration (Python & Kaggle Notebooks):** The entire end-to-end logic is contained within a Python script, designed to run in a Kaggle Notebook or any Python environment. We used libraries like `pandas` for initial data wrangling and `google-cloud-bigquery` to interact with BQ.
+*   **Data Flow:**
+    `Raw Files (GCS) -> BigQuery Tables -> Model Training -> Prediction -> Results Queried by Python Agent -> Report Generation`
 
-Tuning guidance
-- To make failures rarer, reduce `lambda0` and/or increase `lifetime`.
-- To simulate infant-failure (early-life) modes, increase `lambda0` or use a `beta < 1` to have early high hazard.
-- To model gradual wear, increase `degradation rates` (absolute value) to amplify drift over time.
-- Remember that `degradation rates` are applied per day; multiply by expected lifespan (days) to reason about long-term effects.
+    ### **Key Areas in the Repository**
 
-How to change behavior
-- Edit the `parts`, `BASELINES`, or `DEGRADATION_RATES` dicts in `wagon_simulator.py` directly.
-- For more advanced scenarios, you can refactor these dicts to be parameters of `WagonSimulator.__init__` and pass them in from a config or test harness.
+    The repository is organized into several important folders, each serving a distinct purpose:
 
-Example: make brakes wear faster and battery drain slower
+    - **`classification/`**  
+      Contains all AI and machine learning related code. This includes model training, evaluation, and prediction logic for asset failure and sensor forecasting.
+      - In this folder, you will also find the agent notebook, which demonstrates the training of the classification model, the use of `AI.FORECAST` to predict future sensor values, and `AI.GENERATE` to create automated reports.
 
-```python
-parts["brakes"]["lambda0"] = 0.0006
-DEGRADATION_RATES["battery"] = -0.01
-```
+    - **`data_generation/`**  
+      Houses scripts and utilities for generating synthetic industrial datasets. This was used to simulate realistic measurement, failure, and metadata files for development and testing.
 
-If you want, I can also extract these tables into a YAML/JSON config file and load them at runtime so you can tweak parameters without editing code.
+    - **`reports/`**  
+      This folder contains example output reports generated by the neuraltwin agent. These reports summarize asset performance, highlight predicted failures, and provide actionable insights for stakeholders. Download the html report to read it.
+
+
+    Explore these folders to understand the core logic behind neuraltwin's predictive capabilities and how synthetic data was leveraged to build and validate the solution.
+
+    
