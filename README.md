@@ -26,6 +26,8 @@ Neuraltwin operates in a simple, automated four-step pipeline:
 
 We leveraged the power and scalability of the Google Cloud ecosystem, with BigQuery as the central nervous system.
 
+![GCS to BigQuery Architecture Diagram](docs/gcs_to_bigquery.png)
+
 *   **Data Lake & Warehouse (Google Cloud Storage & BigQuery):** Raw data files are landed in a GCS bucket. Our Python script uses the BigQuery client library to load this data, automatically detecting schemas and creating tables. This provides a robust, serverless data warehouse.
 *   **Model:** The model was built using the low-code library pycaret. In the future, we would like to transition to BigQuery's  `CREATE MODEL` statement in order to have the full pipeline cloud-native and leverage BigQuery's full big data capabilities.
 *   **Orchestration (Python & Kaggle Notebooks):** The entire end-to-end logic is contained within a Python script, designed to run in a Kaggle Notebook or any Python environment. We used libraries like `pandas` for initial data wrangling and `google-cloud-bigquery` to interact with BQ.
