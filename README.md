@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="./docs/logo_white_clean_16_9.png" alt="neuraltwin Logo" width="300"/>
+  <img src="docs/logo_white_clean_16_9.png" alt="NeuralTwin Logo" width="300"/>
 </p>
 
 ### **Summary (TL;DR)**
